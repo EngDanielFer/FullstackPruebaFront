@@ -103,6 +103,10 @@ export class FormularioComponent implements OnInit {
   }
 
   guardarAuto() {
+    if (!this.formularioValido()) {
+      alert("Campos incompletos");
+      return;
+    }
     if (this.editingId != null) {
       this.http.put(`${this.API_URL}/${this.editingId}`, this.formData)
         .subscribe(() => {
@@ -117,4 +121,9 @@ export class FormularioComponent implements OnInit {
         });
     }
   }
+
+  formularioValido(): boolean {
+    return this.formData.marca?.trim() !== '' && this.formData.sucursal?.trim() !== '' && this.formData.aspirante?.trim() !== '';
+  }
+
 }
