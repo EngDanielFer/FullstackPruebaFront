@@ -1,0 +1,118 @@
+.contenedor {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-imagen {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.texto-fondo {
+    position: absolute;
+    font-size: 5.7rem;
+    color: #00249C;
+    z-index: 1;
+    top: 35%;
+    left: auto;
+    font-weight: 600;
+}
+
+.texto-frente {
+    position: absolute;
+    top: 55%;
+    left: auto;
+    font-size: 3.4rem;
+    color: #00249C;
+    z-index: 5; 
+    font-weight: 600;
+    text-shadow: 2px 2px 0 #fff, -2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff;
+}
+
+.imagen-frente {
+    position: relative;
+    z-index: 2;
+    width: 400px;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    z-index: 10;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animar {
+    animation: fadeInUp 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+.curva-container-anim {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 300px;
+    height: 100vh;
+    animation: animarCurva 6s linear infinite;
+}
+
+@keyframes animarCurva {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -300px;
+    }
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+path {
+    stroke:#6d6d6d;
+    stroke-width: 4;
+    fill: none;
+    filter: drop-shadow(-10px 0 10px #6d6d6d);
+}
+
+.enlaces {
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    position: relative;
+}
+
+.enlaces a {
+    text-decoration: none;
+    color: #40CEE4;
+}

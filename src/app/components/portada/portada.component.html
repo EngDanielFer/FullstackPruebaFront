@@ -1,0 +1,29 @@
+<div class="contenedor">
+    <div class="contenedor-imagen">
+        <div class="texto-fondo">BIENVENIDO A</div>
+        <div class="texto-frente">MONITORING INNOVATION</div>
+        <a [routerLink]="['/formulario']">
+            <img src="images/Telefono-01.png" alt="Imagen Principal" class="imagen-frente animar">
+        </a>
+    </div>
+    <img src="images/Imagologo_motion.svg" alt="Logo Motion" class="logo animar">
+    <div class="curva-container-anim">
+        <svg viewBox="0 0 300 1000" preserveAspectRatio="none">
+            <path>
+                <animate attributeName="d" dur="4s" repeatCount="indefinite" values="
+                   M300,0 Q 0,500 300,1000;
+                   M300,0 Q -140,500 300,1000;
+                   M300,0 Q -50,500 300,1000;
+                   M300,0 Q -140,500 300,1000;
+                   M300,0 Q 0,500 300,1000;
+                 " />
+            </path>
+        </svg>
+    </div>
+    <div class="enlaces">
+        <a href="https://monitoringinnovation.com/">MONITORINGINNOVATION</a>
+        <a href="https://gpscontrol.co/">GPS CONTROL</a>
+        <a href="https://github.com/EngDanielFer/FullstackPruebaFront">Link repo front</a>
+        <a href="https://github.com/EngDanielFer/FullstackPruebaBack">Link repo back</a>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="contenedor_2">
+    <section class="formulario_section" [class.expandido]="formHabilitado">
+        <button type="button" id="botonHabilitar" [disabled]="formHabilitado" (click)="habilitarFormulario()">
+            <img src="images/Icon_crear.svg" alt="">
+        </button>
+        <form (ngSubmit)="guardarAuto()" id="formDatosAuto">
+            <fieldset id="autoFieldset" [disabled]="!formHabilitado">
+                <div class="form-group">
+                    <img [src]="formHabilitado ? 'images/Icon_vehiculo1.svg' : 'images/Icon_vehiculo.svg'" class="formImages">
+                    <input type="text" [(ngModel)]="formData.marca" id="marca" name="marca" required>
+                </div>
+                <div class="form-group">
+                    <img [src]="formHabilitado ? 'images/Icon_puntoubicacion1.svg' : 'images/Icon_puntoubicacion.svg'" class="formImages">
+                    <input type="text" [(ngModel)]="formData.sucursal" id="sucursal" name="sucursal" required>
+                </div>
+                <div class="form-group">
+                    <img [src]="formHabilitado ? 'images/Icon_persona1.svg' : 'images/Icon_persona.svg'" class="formImages">
+                    <input type="text" [(ngModel)]="formData.aspirante" id="aspirante" name="aspirante" required>
+                </div>
+                <div class="form-actions" *ngIf="formHabilitado">
+                    <ng-container id="btns-crear" *ngIf="editingId === null; else editButtons">
+                        <button type="button" class="btn-form" [disabled]="!formHabilitado" id="cancelFormBtn"
+                            (click)="cancelarFormulario()">Cancelar</button>
+                        <button type="submit" class="btn-form" [disabled]="!formHabilitado"
+                            id="submitBtn">Crear</button>
+                    </ng-container>
+                    <ng-template #editButtons>
+                        <button type="button" class="btn-form icon-btn" (click)="cancelarEdicion()">
+                            <img src="images/Icon_cancelar.svg" alt="Cancelar Edición">
+                        </button>
+                        <button type="submit" class="btn-form icon-btn" (click)="confirmarEdicion()">
+                            <img src="images/Icon_confirmar.svg" alt="Confirmar Edición">
+                        </button>
+                    </ng-template>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+    <section class="tabla_section">
+        <table id="tablaAutos">
+            <thead>
+                <tr>
+                    <th [width]="130">Marca</th>
+                    <th [width]="130">Sucursal</th>
+                    <th colspan="2">Aspirante</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let auto of autos" [class.eliminando]="auto.id === eliminandoId">
+                    <td>{{ auto.marca }}</td>
+                    <td>{{ auto.sucursal }}</td>
+                    <td>{{ auto.aspirante }}</td>
+                    <td [width]="80">
+                        <button class="btnTabla" (click)="editarAuto(auto)">
+                            <img class="btnImages" [src]="!selectedRowId ||esFilaSeleccionada(auto) ? 'images/Icon_editar1.svg' : 'images/Icon_editar.svg'">
+                        </button>
+                        <button class="btnTabla" (click)="eliminarAuto(auto.id)">
+                            <img class="btnImages" [src]="!selectedRowId ||esFilaSeleccionada(auto) ? 'images/Icon_eliminar1.svg' : 'images/Icon_eliminar.svg'">
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <a [routerLink]="['/']">
+        <img src="images/Imagologotipo_motion.svg" alt="Logo Motion">
+    </a>
+</div>

@@ -1,0 +1,286 @@
+.contenedor_2 {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    background: white;
+    color: #C5C5C5;
+    width: 100%;
+    min-height: 100vh;
+    align-items: start;
+    justify-content: center;
+    gap: 40px;
+    /* agrega separación horizontal entre sections */
+}
+
+.contenedor_2 > a > img[alt="Logo Motion"] {
+  position: fixed;
+  display: flex;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px; /* ajusta según tamaño deseado */
+  z-index: 1000;
+}
+
+.formulario_section {
+    background: #fff;
+    padding: 2rem;
+    margin-top: 40px;
+    border-radius: 12px 0 0 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
+    min-width: 400px;
+    animation: slideInUp 0.7s cubic-bezier(.68, -0.55, .27, 1.55);
+}
+
+#formDatosAuto input,
+#formDatosAuto button {
+    font-family: "Montserrat", sans-serif;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #C5C5C5;
+    background-color: transparent;
+    color: #C5C5C5;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.2s;
+    
+}
+
+.form-group input:focus {
+    border-color: #3182ce;
+    outline: none;
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.form-actions button {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    background: white;
+    color: #C5C5C5;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s, transform 0.2s;
+    width: 130px;
+}
+
+#cancelFormBtn {
+    border: 2px solid #E280BE;
+}
+
+#submitBtn {
+    border: 2px solid #40CEE4;
+}
+
+#cancelFormBtn:hover {
+    background: #E280BE;
+    color: white;
+    transform: translateY(-2px) scale(1.04);
+}
+
+#submitBtn:hover {
+    background: #40CEE4;
+    color: white;
+    transform: translateY(-2px) scale(1.04);
+}
+
+.tabla_section {
+    background: #fff;
+    margin-top: 40px;
+    border: none;
+    min-width: 700px;
+    animation: slideInUp 0.7s cubic-bezier(.68, -0.55, .27, 1.55);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.7rem;
+}
+
+#autoFieldset {
+    border: none;
+}
+
+th,
+td {
+    padding: 0.7rem;
+    text-align: left;
+    border-bottom: 1px solid #E280BE;
+}
+
+th {
+    background: #E280BE;
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+    text-align: center;
+    margin: 5px;
+    border-collapse: separate;
+    border-spacing: 10px;
+    border: 6px solid white;
+}
+
+tr {
+    transition: background 0.2s;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+.btnTabla {
+    background-color: transparent;
+    border: none;
+}
+
+.actions button {
+    margin-right: 0.4rem;
+    border: none;
+    background: #e53e3e;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.actions button.edit {
+    background: #38a169;
+}
+
+.actions button:hover {
+    transform: scale(1.06);
+    filter: brightness(1.1);
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-80px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(80px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .formulario_section,
+    .tabla_section {
+        min-width: unset;
+        margin-bottom: 1.5rem;
+    }
+
+    .formulario_section {
+        margin: 20px;
+        padding: 30px;
+    }
+
+}
+
+.formulario_section,
+.tabla_section {
+    border-radius: 12px;
+}
+
+.formImages {
+    height: 30px;
+    margin-right: 20px;
+}
+
+#botonHabilitar {
+    border: none;
+    background-color: transparent;
+}
+
+#botonHabilitar img {
+    height: 20px;
+}
+
+.btnImages {
+    height: 20px;
+}
+
+button.btn-form.icon-btn {
+    padding: 0;
+    width: 32px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon-btn img {
+  width: 32px;
+  height: 32px;
+}
+
+.formulario_section {
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    max-height: fit-content;
+}
+
+.formulario_section.expandido {
+    max-height: 600px;
+}
+
+tr.eliminando {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
