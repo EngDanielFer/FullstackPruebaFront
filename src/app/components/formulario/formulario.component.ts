@@ -19,7 +19,7 @@ interface Auto {
   styleUrl: './formulario.component.css'
 })
 export class FormularioComponent implements OnInit {
-  API_URL = 'http://127.0.0.1:5000/autos';
+  API_URL = 'https://backend-autos-mvws.onrender.com/';
   autos: Auto[] = [];
   formHabilitado: boolean = false;
   editingId: number | null = null;
